@@ -87,6 +87,8 @@ pipeline {
 
                     sh '''  echo "\n\n}" >> /tmp/final_output_full.json '''
                     sh '''  cat /tmp/final_output_full.json '''
+			
+		    git_push()
  
                 }
             }
