@@ -87,7 +87,8 @@ pipeline {
 
                     sh '''  echo "\n\n}" >> /tmp/final_output_full.json '''
                     sh '''  cat /tmp/final_output_full.json '''
-			
+	
+		    sh '''  ls -al && pwd '''
 		    git_push()
  
                 }
@@ -97,6 +98,7 @@ pipeline {
 }
 
 def git_push(){
+	sh '''  ls -al && pwd '''
     sh '''  cd samp-json-creator '''
     sh '''  rm -rf final_output_full.json '''
     sh '''  cp /tmp/final_output_full.json final_output_full.json '''
