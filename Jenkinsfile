@@ -102,6 +102,7 @@ def git_push(){
     sh '''  cp /tmp/final_output_full.json final_output_full.json '''
     sh '''  git add * '''
     sh '''  git commit -m "push JSON file" '''
+	sh '''  git push origin HEAD:main '''
     sh '''  git push '''
 }
 
