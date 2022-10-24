@@ -99,11 +99,13 @@ pipeline {
 
 def git_push(){
     sh '''  rm -rf final_output_full.json '''
-    sh '''  cp /tmp/final_output_full.json final_output_full.json '''
+    sh '''  cp /tmp/final_output_full.json FINAL_OUTOUT.json '''
     sh '''  git add * '''
     sh '''  git commit -m "push JSON file" '''
-	sh '''  git push origin HEAD:main '''
-    sh '''  git push '''
+    sh '''  git push origin HEAD:main '''
+	sh '''  ls -al && pwd '''
+	sh '''  cat FINAL_OUTOUT.json '''
+    //sh '''  git push '''
 }
 
 def String pipeline_selector(String vm_name, def PPAY_JENKINS_PIPELINES, int vm_name_crop_char_count){
