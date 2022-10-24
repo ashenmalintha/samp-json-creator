@@ -94,6 +94,14 @@ pipeline {
     }
 }
 
+def git_push(){
+    sh '''  cd samp-json-creator '''
+    sh '''  rm -rf final_output_full.json '''
+    sh '''  cp /tmp/final_output_full.json final_output_full.json '''
+    sh '''  git add * '''
+    sh '''  git commit -m "push JSON file" '''
+    sh '''  git push '''
+}
 
 def String pipeline_selector(String vm_name, def PPAY_JENKINS_PIPELINES, int vm_name_crop_char_count){
     //def PPAY_JENKINS_PIPELINES = ['ppay-ami-deploy-npe','ppay-ee-api-deploy-npe','ppay-email-notification-deploy-npe','ppay-er-api-deploy-npe','ppay-es-web-deploy-npe','ppay-iw4-deploy-npe','ppay-report-svc-deploy-npe']
