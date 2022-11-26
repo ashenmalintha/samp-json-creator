@@ -105,8 +105,8 @@ def git_push(){
     
 	sh '''  ls -al && pwd '''
 	sh '''  cat FINAL_OUTOUT.json '''
-    sh '''  git push origin HEAD:main '''
-    sh '''  git push '''
+    //sh '''  git push origin HEAD:main '''
+    //sh '''  git push '''
 }
 
 def String pipeline_selector(String vm_name, def PPAY_JENKINS_PIPELINES, int vm_name_crop_char_count){
